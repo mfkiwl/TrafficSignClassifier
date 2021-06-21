@@ -12,20 +12,20 @@ from pascal_voc_writer import Writer
 __TEST = False
 NRS_HEIGHT = 800  # non-resized height
 NRS_WIDTH = 1360  # non-resized width
-CV2_RESIZE_WIDTH = 320
-CV2_RESIZE_HEIGHT = 320
+CV2_RESIZE_WIDTH = 640
+CV2_RESIZE_HEIGHT = 640
 
-# input_folder = "/home/awfulwaffle/Downloads/FullIJCNN2013/FullIJCNN2013/"
-input_folder = "F:/repos/TensorFlow/workspace/training_demo/res/images/test"
-labels_dir = "F:/repos/TensorFlow/workspace/training_demo/res/images/test"
-images_dir = "F:/repos/TensorFlow/workspace/training_demo/res/images/test"
+input_folder = "F:/repos/FullIJCNN2013"
+# input_folder = "F:/repos/TensorFlow/workspace/training_demo/res/images/test"
+labels_dir = "F:/repos/TensorFlow/workspace/training_demo/res/images_640/"
+images_dir = "F:/repos/TensorFlow/workspace/training_demo/res/images_640/"
 # ground truth file
 gt_file = "F:/repos/FullIJCNN2013/gt.txt"
 
 with open(gt_file) as gt:
     gt_content = gt.readlines()
 
-_extension = "jpg"
+_extension = "ppm"
 train_percent = 70
 val_percent = 100 - train_percent
 
@@ -110,7 +110,7 @@ for key in gt_dict:
                          _sublist[2], _sublist[3], _sublist[4])
     writer.save(filename)
 
-exit(0)
+# exit(0)
 # =================== ENDING HERE ONLY FOR PASCAL VOC LABELS ========================================
 # all images have extension _extenstion, so we get their names
 all_files = os.listdir(input_folder)
@@ -122,7 +122,7 @@ for file in all_files:
         ext_files.append(file)
 
 ext_files.sort()
-clear_dir(images_dir)
+# clear_dir(images_dir)
 # print(ext_files)
 print("Copying files..")
 

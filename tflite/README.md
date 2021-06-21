@@ -87,6 +87,8 @@ a checkpoint file. For converting code from a `saved_model`, the script
 - Builtin ops: *! Please verfiy the errors in `saved_model_to_tflite.py`
   where you have to add ops at `converter.target_spec.supported_ops`*
 
+- Eval  issue solved with numpy==1.17.5
+
 ## Models used
 
 *Note: you can unzip(or tar(?)) `.tflite` models to get the labelmap.txt
